@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+
 import './App.css';
+
+import {  Routes, Route  } from "react-router-dom";
+
+import Navigation from './components/Navigation.js'
+import Proteina from './components/Proteina.js'
+import Carbos from './components/Carbos'
+import Grasa from './components/Grasas'
+import Fibra from './components/Fibra'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navigation/>
+      <div className='container p-4'>
+      <Routes>
+          <Route path="/"  element={<Proteina/>} />
+          <Route path="/Carbohidratos" element={<Carbos/>} />
+          <Route path="/Grasas" element={<Grasa/>} />
+          <Route path="/Fibras" element={<Fibra/>} />
+        </Routes>
+      </div>
     </div>
   );
 }
